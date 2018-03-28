@@ -1,0 +1,55 @@
+.album-block{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height:200px;
+}
+.album-name{
+  text-align: center;
+  /* padding-top: 60px; */
+  font-size: 1rem;
+  background-color: #000000b3;
+  color: white;
+  font-size: 3rem;
+}
+
+.album-name-hover{
+  background-color: white;
+  color:black;
+}
+.album-hover {
+opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.album-hover:hover {
+  opacity: .5;
+}
+
+.no-padding{
+  padding: 0px;
+}
+.album-container a{
+  text-decoration: none;
+}
+.album-padding {
+    height: 70px;
+}
+/*
+@include media-breakpoint-up(sm) {
+  .album-name {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .album-name {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .album-name {
+    font-size: 1.6rem;
+  }
+} */
