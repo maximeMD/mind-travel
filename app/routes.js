@@ -119,6 +119,38 @@ module.exports = function(app, passport, db) {
       res.render('kaleidoscope.ejs');
     });
 
+    app.get('/admin', isLoggedIn, function(req, res){
+      res.render('admin/index');
+    });
+
+    app.get('/admin/albums', isLoggedIn, function(req, res){
+      db.collection('album').find({}, function(err, albums){
+        var album_list = []
+        var i=0;
+        albums.forEach(function(album){
+          album_list[i] = album;
+          i++;
+        }, function(){ //callbacl, waiting for the end of forEach
+          // console.log(img_list);
+          res.render('admin/pages/albums', {
+            user: req.user,
+            album_list: album_list,
+            data: {},
+            error: {}
+          });
+        });
+      });
+    });
+    app.post('/admin/albums', isLoggedIn, function(req, res){
+      console.log(req.body);
+      newAlbum = {
+        "name": req.body.albumName,
+        "src" : "test"
+      };
+      db.collection('album').insert(newAlbum);
+      res.redirect('/admin/albums');
+    });
+
 };
 
 // route middleware to make sure a user is logged in

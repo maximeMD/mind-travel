@@ -31,7 +31,6 @@ require('./config/passport')(passport); // pass passport for configuration
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser()); // get information from html forms
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
@@ -46,6 +45,11 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // create db access to send to route
 var db = mongoose.connection;
+
+// parse application/json
+app.use(bodyParser.json())
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {

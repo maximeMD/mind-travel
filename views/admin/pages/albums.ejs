@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+    <link rel="stylesheet" type="text/css" href="css/albums.css">
+
+  </head>
+  <body>
+    <% include ../partials/header.ejs %>
+
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#newAlbumModal">New Album</button>
+    <ul>
+      <% album_list.forEach(function(album) { %>
+          <li><%= album.name %></li>
+      <% }); %>
+    </ul>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="newAlbumModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Album</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/admin/albums" method="post">
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="albumName">Album name</label>
+              <input type="text" class="form-control" id="albumName" name="albumName" placeholder="Enter album name">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    <script src="js/photoswipe_init.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
