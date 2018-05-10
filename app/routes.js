@@ -151,6 +151,21 @@ module.exports = function(app, passport, db) {
       res.redirect('/admin/albums');
     });
 
+    app.get('/admin/album/:name', isLoggedIn, function(req, res){
+      db.collection('images').find({'album':req.params.name}, function(err, images){
+        var img_list = [];
+        var i =0;
+        images.forEach(function(image){
+          img_list[i] = image;
+          i++;
+        }, function(){ //callback, waiting for the end of forEach
+          res.render('admin/pages/album.ejs', {
+            user: req.user,
+            img_list: img_list
+          });
+        });
+      });
+    });
 };
 
 // route middleware to make sure a user is logged in
