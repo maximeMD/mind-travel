@@ -11,7 +11,7 @@
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#newAlbumModal">New Album</button>
     <ul>
       <% album_list.forEach(function(album) { %>
-          <li><%= album.name %></li>
+          <li><%= album.name %></li><a href="/admin/album/delete/<%=album._id%>">delete</a>
       <% }); %>
     </ul>
     </div>
