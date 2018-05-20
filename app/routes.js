@@ -1,3 +1,5 @@
+var Album = require('./models/album');
+
 module.exports = function(app, passport, db) {
 
     // app.get('/private/*', function(req,res){
@@ -124,43 +126,46 @@ module.exports = function(app, passport, db) {
     });
 
     app.get('/admin/albums', isLoggedIn, function(req, res){
-      db.collection('album').find({}, function(err, albums){
-        var album_list = []
-        var i=0;
-        albums.forEach(function(album){
-          album_list[i] = album;
-          i++;
-        }, function(){ //callbacl, waiting for the end of forEach
-          // console.log(img_list);
-          res.render('admin/pages/albums', {
-            user: req.user,
-            album_list: album_list,
-            data: {},
-            error: {}
-          });
+      Album.find({}, function(err, albums){
+        res.render('admin/pages/albums', {
+          user : req.user,
+          albums: albums
         });
       });
     });
-    app.post('/admin/albums', isLoggedIn, function(req, res){
-      console.log(req.body);
-      newAlbum = {
+    app.post('/admin/album/create', isLoggedIn, function(req, res){
+      var newAlbum = new Album({
         "name": req.body.albumName,
-        "src" : "test"
-      };
-      db.collection('album').insert(newAlbum);
+        "src" : null
+      });
+      newAlbum.save(function(err){
+        if (err) throw err;
+        console.log("Album save success");
+      });
       res.redirect('/admin/albums');
     });
+    app.post('/admin/album/delete', isLoggedIn, function(req, res){
+      Album.findByIdAndRemove(req.body.id, function(err){
+        if(err) throw err;
+        console.log("Album deleted");
+      })
+      res.redirect('/admin/albums');
+    });
+    app.post('/admin/album/update', isLoggedIn, function(req, res){
+      User.findByIdAndUpdate(req.body.id, function(err, album){
+        if(err) throw err;
+        console.log("Album updated");
+      })
+    })
 
 };
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
-
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated()){
         return next();
       }
-
     // if they aren't redirect them to the home page
     res.redirect('/');
 }

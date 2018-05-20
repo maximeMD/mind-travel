@@ -82,3 +82,18 @@ require('./app/routes.js')(app, passport, db, express, path); // load our routes
 // launch ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);
+
+// var Album = require('./app/models/album');
+// var albumtest = new Album({
+//   name:"testname",
+//   src:"testsrc"
+// });
+// albumtest.testy(function(err, name){
+//   if(err) throw err;
+//   console.log('Your new name is' + name);
+// })
+//
+// albumtest.save(function(err){
+//   if(err) throw err;
+//   console.log("Album save success");
+// })
