@@ -2,21 +2,6 @@ var Album = require('./models/album');
 
 module.exports = function(app, passport, db) {
 
-    // app.get('/private/*', function(req,res){
-    //   if(req.isAuthenticated()){
-    //     // http://localhost:8080/private/album_thumbnail/boom/IMG_1694_thumb.jpg
-    //     app.use('/private', express.static(path.join(__dirname, 'private')));
-    //   }
-    // });
-
-    // app.use(function(req, res, next) {
-    //     if (req.isAuthenticated())
-    //     {
-    //         res.redirect('/login');
-    //     }
-    //     next();
-    // });
-
     // =====================================
     // HOME PAGE (with login links) ========
     // =====================================
@@ -158,6 +143,28 @@ module.exports = function(app, passport, db) {
       })
     })
 
+    app.get('/admin/album/:id', isLoggedIn, function(req, res){
+      db.collection('images').find({'album':req.params.id}, function(err, images){
+        var img_list = [];
+        var i =0;
+        images.forEach(function(image){
+          img_list[i] = image;
+          i++;
+        }, function(){ //callback, waiting for the end of forEach
+          res.render('admin/pages/album.ejs', {
+            user: req.user,
+            img_list: img_list
+          });
+        });
+      });
+    });
+
+    app.get('/admin/album/delete/:id', isLoggedIn, function(req,res){
+      // db.collection("album").findById(req.params.id, function(error, album){
+      User.findById(req.params.id, function(req,res){
+        res.redirect("/admin/albums");
+      });
+    });
 };
 
 // route middleware to make sure a user is logged in
