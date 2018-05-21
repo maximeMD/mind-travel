@@ -147,7 +147,7 @@ module.exports = function(app, passport) {
     });
 
     app.get('/admin/album/delete/:id', isLoggedIn, function(req,res){
-      User.findById(req.params.id, function(req,res){
+      Album.findById(req.params.id, function(req,res){
         res.redirect("/admin/albums");
       });
     });

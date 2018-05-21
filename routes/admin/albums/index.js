@@ -12,4 +12,7 @@ albums.post('/create', create);
 const upload = require('./upload');
 albums.post('/upload/:name', upload);
 
+const deleteAlbum = require('./delete');
+albums.post('/delete', deleteAlbum);
+
 module.exports = albums;
