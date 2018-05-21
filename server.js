@@ -41,7 +41,11 @@ app.use(express.static(path.join(__dirname, 'public')));// set public path
 
 
 // required for passport
-app.use(session({ secret: 'turnontuneinedropoutbytimleary' })); // session secret
+app.use(session({
+  secret: 'turnontuneinedropoutbytimleary', // session secret
+  resave: true,
+  saveUninitialized: false
+}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -88,6 +92,10 @@ app.post('/login', passport.authenticate('local-login', {
 app.get('/signup', function(req, res) {
     // render the page and pass in any flash data if it exists
     res.render('signup.ejs', { message: req.flash('signupMessage') });
+});
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
 });
 
 const routes = require('./routes');

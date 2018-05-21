@@ -1,17 +1,17 @@
 <!doctype html>
 <html>
   <head>
-    <% include ../partials/head.ejs %>
+    <% include ../../partials/head.ejs %>
     <link rel="stylesheet" type="text/css" href="css/albums.css">
 
   </head>
   <body>
-    <% include ../partials/header.ejs %>
+    <% include ../../partials/header.ejs %>
 
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#newAlbumModal">New Album</button>
     <ul>
       <% albums.forEach(function(album) { %>
-          <li><a href="/admin/album/<%= album.name %>"><%= album.name %></a> / <form action="/admin/album/delete" method="post"><input type='hidden' name='id' value='<%= album.id %>'><button type="submit" value="submitDelete">delete</button></form> / </li>
+          <li><a href="/admin/albums/<%= album.name %>"><%= album.name %></a> / <form action="/admin/album/delete" method="post"><input type='hidden' name='id' value='<%= album.id %>'><button type="submit" value="submitDelete">delete</button></form> / </li>
       <% }); %>
     </ul>
     </div>
@@ -26,7 +26,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="/admin/album/create" method="post">
+      <form action="/admin/albums/create" method="post">
         <div class="modal-body">
             <div class="form-group">
               <label for="albumName">Album name</label>

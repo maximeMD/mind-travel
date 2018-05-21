@@ -7,4 +7,7 @@ routes.get('/home', (req, res) => {
 const albums = require('./albums');
 routes.use('/albums', albums);
 
+const admin = require('./admin');
+routes.use('/admin', admin);
+
 module.exports = routes;

@@ -1,18 +1,18 @@
 <!doctype html>
 <html>
   <head>
-    <% include ../partials/head.ejs %>
+    <% include ../../partials/head.ejs %>
     <link rel="stylesheet" type="text/css" href="css/albums.css">
 
   </head>
   <body>
-    <% include ../partials/header.ejs %>
+    <% include ../../partials/header.ejs %>
     <div class="container-fluid no-padding">
       <div class="album-container row no-gutters">
         <% var newline=true %>
         <% albums.forEach(function(album) { %>
           <div class="col-md-6">
-            <a href="/album/<%= album.name %>">
+            <a href="/albums/<%= album.name %>">
               <div class="album-padding"></div>
               <div class="album-block album-hover" style="background-image:url(/private/album_thumbnail/<%= album.name %>/<%= album.src %>)">
                   <div class="album-name"><%= album.name %></div>
