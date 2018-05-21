@@ -18,6 +18,9 @@ var configDB = require('./config/database.js');
 
 var path = require('path');
 
+
+
+
 // var imgThumb = require('./app/utils/imgThumb.js')
 //
 // // create thumb
@@ -53,12 +56,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
-
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated()){
         return next();
       }
-
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
@@ -67,33 +68,33 @@ function isLoggedIn(req, res, next) {
 app.use('/private', [isLoggedIn, express.static(path.join(__dirname, 'private'))]);
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport, db, express, path); // load our routes and pass in our app and fully configured passport
+// require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
+app.get('/', (req, res) => {
+  res.render('index.ejs');
+});
+// show the login form
+app.get('/login', function(req, res) {
+    // render the page and pass in any flash data if it exists
+    res.render('login.ejs', { message: req.flash('loginMessage') });
+});
+// process the login form
+app.post('/login', passport.authenticate('local-login', {
+    successRedirect : '/home', // redirect to the secure profile section
+    failureRedirect : '/login', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+}));
+// show the signup form
+app.get('/signup', function(req, res) {
+    // render the page and pass in any flash data if it exists
+    res.render('signup.ejs', { message: req.flash('signupMessage') });
+});
 
-// app.use('/private', function(req,res,next){
-//  if(req.isAuthenticated()){
-//    return express.static(path.join(__dirname, 'private'));
-//  } else {
-//    // res.render('login.ejs');
-//    res.send('Hello from D!');
-//  }
-// });
+const routes = require('./routes');
+app.use('/', [isLoggedIn, routes]);
+
+// app.use('/albums', require('./app/controllers/albums'));
 
 // launch ======================================================================
 app.listen(port);
 console.log('The magic happens on port ' + port);
-
-// var Album = require('./app/models/album');
-// var albumtest = new Album({
-//   name:"testname",
-//   src:"testsrc"
-// });
-// albumtest.testy(function(err, name){
-//   if(err) throw err;
-//   console.log('Your new name is' + name);
-// })
-//
-// albumtest.save(function(err){
-//   if(err) throw err;
-//   console.log("Album save success");
-// })

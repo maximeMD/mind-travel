@@ -2,7 +2,7 @@
 <html>
   <head>
     <% include ../partials/head.ejs %>
-    <link rel="stylesheet" type="text/css" href="/css/portfolio.css">
+    <link rel="stylesheet" type="text/css" href="/css/album.css">
 
     <!-- Core CSS file -->
     <link rel="stylesheet" href="/PhotoSwipe/dist/photoswipe.css">
@@ -93,7 +93,7 @@
 
     </div>
     <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
-      <% img_list.forEach(function(image) { %>
+      <% images.forEach(function(image) { %>
         <!-- <div class="img-container"> -->
           <figure class="img-figure col-md-2 hover01" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
             <a href=<%= "/private/album/"+image.album+"/"+image.src%> itemprop="contentUrl" data-size=<%= image.width%>x<%= image.height%>>
