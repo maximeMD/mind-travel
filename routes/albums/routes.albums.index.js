@@ -1,9 +1,9 @@
 const albums = require('express').Router();
 
-const all = require('./all');
+const all = require('./routes.albums.all');
 albums.get('/', all);
 
-const single = require('./single');
+const single = require('./routes.albums.single');
 albums.get('/:name', single);
 
 module.exports = albums;

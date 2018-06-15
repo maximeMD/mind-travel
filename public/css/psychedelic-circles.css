@@ -1,0 +1,775 @@
+body {
+  background: #000; }
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.container, .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: linear-gradient(#c0392b 10%, #2980b9 25%, #27ae60 75%, #9b59b6 75%, #f1c40f 75%);
+  background-size: 5px 100px;
+  background-position: center; }
+
+.container {
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 500px;
+  border-radius: 50px; }
+
+.circle {
+  border-radius: 100%; }
+  .circle:nth-child(2) {
+    animation: spin 5s -0.4s ease-in-out alternate infinite;
+    height: 410px;
+    width: 410px;
+    margin: -205px; }
+  .circle:nth-child(3) {
+    animation: spin 5s -0.6s ease-in-out alternate infinite;
+    height: 370px;
+    width: 370px;
+    margin: -185px; }
+  .circle:nth-child(4) {
+    animation: spin 5s -0.8s ease-in-out alternate infinite;
+    height: 330px;
+    width: 330px;
+    margin: -165px; }
+  .circle:nth-child(5) {
+    animation: spin 5s -1s ease-in-out alternate infinite;
+    height: 290px;
+    width: 290px;
+    margin: -145px; }
+  .circle:nth-child(6) {
+    animation: spin 5s -1.2s ease-in-out alternate infinite;
+    height: 250px;
+    width: 250px;
+    margin: -125px; }
+  .circle:nth-child(7) {
+    animation: spin 5s -1.4s ease-in-out alternate infinite;
+    height: 210px;
+    width: 210px;
+    margin: -105px; }
+  .circle:nth-child(8) {
+    animation: spin 5s -1.6s ease-in-out alternate infinite;
+    height: 170px;
+    width: 170px;
+    margin: -85px; }
+  .circle:nth-child(9) {
+    animation: spin 5s -1.8s ease-in-out alternate infinite;
+    height: 130px;
+    width: 130px;
+    margin: -65px; }
+  .circle:nth-child(10) {
+    animation: spin 5s -2s ease-in-out alternate infinite;
+    height: 90px;
+    width: 90px;
+    margin: -45px; }
+  .circle:nth-child(11) {
+    animation: spin 5s -2.2s ease-in-out alternate infinite;
+    height: 50px;
+    width: 50px;
+    margin: -25px; }
+  .circle:nth-child(12) {
+    animation: spin 5s -2.4s ease-in-out alternate infinite;
+    height: 10px;
+    width: 10px;
+    margin: -5px; }
+  .circle:nth-child(13) {
+    animation: spin 5s -2.6s ease-in-out alternate infinite;
+    height: -30px;
+    width: -30px;
+    margin: 15px; }
+  .circle:nth-child(14) {
+    animation: spin 5s -2.8s ease-in-out alternate infinite;
+    height: -70px;
+    width: -70px;
+    margin: 35px; }
+  .circle:nth-child(15) {
+    animation: spin 5s -3s ease-in-out alternate infinite;
+    height: -110px;
+    width: -110px;
+    margin: 55px; }
+  .circle:nth-child(16) {
+    animation: spin 5s -3.2s ease-in-out alternate infinite;
+    height: -150px;
+    width: -150px;
+    margin: 75px; }
+  .circle:nth-child(17) {
+    animation: spin 5s -3.4s ease-in-out alternate infinite;
+    height: -190px;
+    width: -190px;
+    margin: 95px; }
+  .circle:nth-child(18) {
+    animation: spin 5s -3.6s ease-in-out alternate infinite;
+    height: -230px;
+    width: -230px;
+    margin: 115px; }
+  .circle:nth-child(19) {
+    animation: spin 5s -3.8s ease-in-out alternate infinite;
+    height: -270px;
+    width: -270px;
+    margin: 135px; }
+  .circle:nth-child(20) {
+    animation: spin 5s -4s ease-in-out alternate infinite;
+    height: -310px;
+    width: -310px;
+    margin: 155px; }
+  .circle:nth-child(21) {
+    animation: spin 5s -4.2s ease-in-out alternate infinite;
+    height: -350px;
+    width: -350px;
+    margin: 175px; }
+  .circle:nth-child(22) {
+    animation: spin 5s -4.4s ease-in-out alternate infinite;
+    height: -390px;
+    width: -390px;
+    margin: 195px; }
+  .circle:nth-child(23) {
+    animation: spin 5s -4.6s ease-in-out alternate infinite;
+    height: -430px;
+    width: -430px;
+    margin: 215px; }
+  .circle:nth-child(24) {
+    animation: spin 5s -4.8s ease-in-out alternate infinite;
+    height: -470px;
+    width: -470px;
+    margin: 235px; }
+  .circle:nth-child(25) {
+    animation: spin 5s -5s ease-in-out alternate infinite;
+    height: -510px;
+    width: -510px;
+    margin: 255px; }
+  .circle:nth-child(26) {
+    animation: spin 5s -5.2s ease-in-out alternate infinite;
+    height: -550px;
+    width: -550px;
+    margin: 275px; }
+  .circle:nth-child(27) {
+    animation: spin 5s -5.4s ease-in-out alternate infinite;
+    height: -590px;
+    width: -590px;
+    margin: 295px; }
+  .circle:nth-child(28) {
+    animation: spin 5s -5.6s ease-in-out alternate infinite;
+    height: -630px;
+    width: -630px;
+    margin: 315px; }
+  .circle:nth-child(29) {
+    animation: spin 5s -5.8s ease-in-out alternate infinite;
+    height: -670px;
+    width: -670px;
+    margin: 335px; }
+  .circle:nth-child(30) {
+    animation: spin 5s -6s ease-in-out alternate infinite;
+    height: -710px;
+    width: -710px;
+    margin: 355px; }
+  .circle:nth-child(31) {
+    animation: spin 5s -6.2s ease-in-out alternate infinite;
+    height: -750px;
+    width: -750px;
+    margin: 375px; }
+  .circle:nth-child(32) {
+    animation: spin 5s -6.4s ease-in-out alternate infinite;
+    height: -790px;
+    width: -790px;
+    margin: 395px; }
+  .circle:nth-child(33) {
+    animation: spin 5s -6.6s ease-in-out alternate infinite;
+    height: -830px;
+    width: -830px;
+    margin: 415px; }
+  .circle:nth-child(34) {
+    animation: spin 5s -6.8s ease-in-out alternate infinite;
+    height: -870px;
+    width: -870px;
+    margin: 435px; }
+  .circle:nth-child(35) {
+    animation: spin 5s -7s ease-in-out alternate infinite;
+    height: -910px;
+    width: -910px;
+    margin: 455px; }
+  .circle:nth-child(36) {
+    animation: spin 5s -7.2s ease-in-out alternate infinite;
+    height: -950px;
+    width: -950px;
+    margin: 475px; }
+  .circle:nth-child(37) {
+    animation: spin 5s -7.4s ease-in-out alternate infinite;
+    height: -990px;
+    width: -990px;
+    margin: 495px; }
+  .circle:nth-child(38) {
+    animation: spin 5s -7.6s ease-in-out alternate infinite;
+    height: -1030px;
+    width: -1030px;
+    margin: 515px; }
+  .circle:nth-child(39) {
+    animation: spin 5s -7.8s ease-in-out alternate infinite;
+    height: -1070px;
+    width: -1070px;
+    margin: 535px; }
+  .circle:nth-child(40) {
+    animation: spin 5s -8s ease-in-out alternate infinite;
+    height: -1110px;
+    width: -1110px;
+    margin: 555px; }
+  .circle:nth-child(41) {
+    animation: spin 5s -8.2s ease-in-out alternate infinite;
+    height: -1150px;
+    width: -1150px;
+    margin: 575px; }
+  .circle:nth-child(42) {
+    animation: spin 5s -8.4s ease-in-out alternate infinite;
+    height: -1190px;
+    width: -1190px;
+    margin: 595px; }
+  .circle:nth-child(43) {
+    animation: spin 5s -8.6s ease-in-out alternate infinite;
+    height: -1230px;
+    width: -1230px;
+    margin: 615px; }
+  .circle:nth-child(44) {
+    animation: spin 5s -8.8s ease-in-out alternate infinite;
+    height: -1270px;
+    width: -1270px;
+    margin: 635px; }
+  .circle:nth-child(45) {
+    animation: spin 5s -9s ease-in-out alternate infinite;
+    height: -1310px;
+    width: -1310px;
+    margin: 655px; }
+  .circle:nth-child(46) {
+    animation: spin 5s -9.2s ease-in-out alternate infinite;
+    height: -1350px;
+    width: -1350px;
+    margin: 675px; }
+  .circle:nth-child(47) {
+    animation: spin 5s -9.4s ease-in-out alternate infinite;
+    height: -1390px;
+    width: -1390px;
+    margin: 695px; }
+  .circle:nth-child(48) {
+    animation: spin 5s -9.6s ease-in-out alternate infinite;
+    height: -1430px;
+    width: -1430px;
+    margin: 715px; }
+  .circle:nth-child(49) {
+    animation: spin 5s -9.8s ease-in-out alternate infinite;
+    height: -1470px;
+    width: -1470px;
+    margin: 735px; }
+  .circle:nth-child(50) {
+    animation: spin 5s -10s ease-in-out alternate infinite;
+    height: -1510px;
+    width: -1510px;
+    margin: 755px; }
+  .circle:nth-child(51) {
+    animation: spin 5s -10.2s ease-in-out alternate infinite;
+    height: -1550px;
+    width: -1550px;
+    margin: 775px; }
+  .circle:nth-child(52) {
+    animation: spin 5s -10.4s ease-in-out alternate infinite;
+    height: -1590px;
+    width: -1590px;
+    margin: 795px; }
+  .circle:nth-child(53) {
+    animation: spin 5s -10.6s ease-in-out alternate infinite;
+    height: -1630px;
+    width: -1630px;
+    margin: 815px; }
+  .circle:nth-child(54) {
+    animation: spin 5s -10.8s ease-in-out alternate infinite;
+    height: -1670px;
+    width: -1670px;
+    margin: 835px; }
+  .circle:nth-child(55) {
+    animation: spin 5s -11s ease-in-out alternate infinite;
+    height: -1710px;
+    width: -1710px;
+    margin: 855px; }
+  .circle:nth-child(56) {
+    animation: spin 5s -11.2s ease-in-out alternate infinite;
+    height: -1750px;
+    width: -1750px;
+    margin: 875px; }
+  .circle:nth-child(57) {
+    animation: spin 5s -11.4s ease-in-out alternate infinite;
+    height: -1790px;
+    width: -1790px;
+    margin: 895px; }
+  .circle:nth-child(58) {
+    animation: spin 5s -11.6s ease-in-out alternate infinite;
+    height: -1830px;
+    width: -1830px;
+    margin: 915px; }
+  .circle:nth-child(59) {
+    animation: spin 5s -11.8s ease-in-out alternate infinite;
+    height: -1870px;
+    width: -1870px;
+    margin: 935px; }
+  .circle:nth-child(60) {
+    animation: spin 5s -12s ease-in-out alternate infinite;
+    height: -1910px;
+    width: -1910px;
+    margin: 955px; }
+  .circle:nth-child(61) {
+    animation: spin 5s -12.2s ease-in-out alternate infinite;
+    height: -1950px;
+    width: -1950px;
+    margin: 975px; }
+  .circle:nth-child(62) {
+    animation: spin 5s -12.4s ease-in-out alternate infinite;
+    height: -1990px;
+    width: -1990px;
+    margin: 995px; }
+  .circle:nth-child(63) {
+    animation: spin 5s -12.6s ease-in-out alternate infinite;
+    height: -2030px;
+    width: -2030px;
+    margin: 1015px; }
+  .circle:nth-child(64) {
+    animation: spin 5s -12.8s ease-in-out alternate infinite;
+    height: -2070px;
+    width: -2070px;
+    margin: 1035px; }
+  .circle:nth-child(65) {
+    animation: spin 5s -13s ease-in-out alternate infinite;
+    height: -2110px;
+    width: -2110px;
+    margin: 1055px; }
+  .circle:nth-child(66) {
+    animation: spin 5s -13.2s ease-in-out alternate infinite;
+    height: -2150px;
+    width: -2150px;
+    margin: 1075px; }
+  .circle:nth-child(67) {
+    animation: spin 5s -13.4s ease-in-out alternate infinite;
+    height: -2190px;
+    width: -2190px;
+    margin: 1095px; }
+  .circle:nth-child(68) {
+    animation: spin 5s -13.6s ease-in-out alternate infinite;
+    height: -2230px;
+    width: -2230px;
+    margin: 1115px; }
+  .circle:nth-child(69) {
+    animation: spin 5s -13.8s ease-in-out alternate infinite;
+    height: -2270px;
+    width: -2270px;
+    margin: 1135px; }
+  .circle:nth-child(70) {
+    animation: spin 5s -14s ease-in-out alternate infinite;
+    height: -2310px;
+    width: -2310px;
+    margin: 1155px; }
+  .circle:nth-child(71) {
+    animation: spin 5s -14.2s ease-in-out alternate infinite;
+    height: -2350px;
+    width: -2350px;
+    margin: 1175px; }
+  .circle:nth-child(72) {
+    animation: spin 5s -14.4s ease-in-out alternate infinite;
+    height: -2390px;
+    width: -2390px;
+    margin: 1195px; }
+  .circle:nth-child(73) {
+    animation: spin 5s -14.6s ease-in-out alternate infinite;
+    height: -2430px;
+    width: -2430px;
+    margin: 1215px; }
+  .circle:nth-child(74) {
+    animation: spin 5s -14.8s ease-in-out alternate infinite;
+    height: -2470px;
+    width: -2470px;
+    margin: 1235px; }
+  .circle:nth-child(75) {
+    animation: spin 5s -15s ease-in-out alternate infinite;
+    height: -2510px;
+    width: -2510px;
+    margin: 1255px; }
+  .circle:nth-child(76) {
+    animation: spin 5s -15.2s ease-in-out alternate infinite;
+    height: -2550px;
+    width: -2550px;
+    margin: 1275px; }
+  .circle:nth-child(77) {
+    animation: spin 5s -15.4s ease-in-out alternate infinite;
+    height: -2590px;
+    width: -2590px;
+    margin: 1295px; }
+  .circle:nth-child(78) {
+    animation: spin 5s -15.6s ease-in-out alternate infinite;
+    height: -2630px;
+    width: -2630px;
+    margin: 1315px; }
+  .circle:nth-child(79) {
+    animation: spin 5s -15.8s ease-in-out alternate infinite;
+    height: -2670px;
+    width: -2670px;
+    margin: 1335px; }
+  .circle:nth-child(80) {
+    animation: spin 5s -16s ease-in-out alternate infinite;
+    height: -2710px;
+    width: -2710px;
+    margin: 1355px; }
+  .circle:nth-child(81) {
+    animation: spin 5s -16.2s ease-in-out alternate infinite;
+    height: -2750px;
+    width: -2750px;
+    margin: 1375px; }
+  .circle:nth-child(82) {
+    animation: spin 5s -16.4s ease-in-out alternate infinite;
+    height: -2790px;
+    width: -2790px;
+    margin: 1395px; }
+  .circle:nth-child(83) {
+    animation: spin 5s -16.6s ease-in-out alternate infinite;
+    height: -2830px;
+    width: -2830px;
+    margin: 1415px; }
+  .circle:nth-child(84) {
+    animation: spin 5s -16.8s ease-in-out alternate infinite;
+    height: -2870px;
+    width: -2870px;
+    margin: 1435px; }
+  .circle:nth-child(85) {
+    animation: spin 5s -17s ease-in-out alternate infinite;
+    height: -2910px;
+    width: -2910px;
+    margin: 1455px; }
+  .circle:nth-child(86) {
+    animation: spin 5s -17.2s ease-in-out alternate infinite;
+    height: -2950px;
+    width: -2950px;
+    margin: 1475px; }
+  .circle:nth-child(87) {
+    animation: spin 5s -17.4s ease-in-out alternate infinite;
+    height: -2990px;
+    width: -2990px;
+    margin: 1495px; }
+  .circle:nth-child(88) {
+    animation: spin 5s -17.6s ease-in-out alternate infinite;
+    height: -3030px;
+    width: -3030px;
+    margin: 1515px; }
+  .circle:nth-child(89) {
+    animation: spin 5s -17.8s ease-in-out alternate infinite;
+    height: -3070px;
+    width: -3070px;
+    margin: 1535px; }
+  .circle:nth-child(90) {
+    animation: spin 5s -18s ease-in-out alternate infinite;
+    height: -3110px;
+    width: -3110px;
+    margin: 1555px; }
+  .circle:nth-child(91) {
+    animation: spin 5s -18.2s ease-in-out alternate infinite;
+    height: -3150px;
+    width: -3150px;
+    margin: 1575px; }
+  .circle:nth-child(92) {
+    animation: spin 5s -18.4s ease-in-out alternate infinite;
+    height: -3190px;
+    width: -3190px;
+    margin: 1595px; }
+  .circle:nth-child(93) {
+    animation: spin 5s -18.6s ease-in-out alternate infinite;
+    height: -3230px;
+    width: -3230px;
+    margin: 1615px; }
+  .circle:nth-child(94) {
+    animation: spin 5s -18.8s ease-in-out alternate infinite;
+    height: -3270px;
+    width: -3270px;
+    margin: 1635px; }
+  .circle:nth-child(95) {
+    animation: spin 5s -19s ease-in-out alternate infinite;
+    height: -3310px;
+    width: -3310px;
+    margin: 1655px; }
+  .circle:nth-child(96) {
+    animation: spin 5s -19.2s ease-in-out alternate infinite;
+    height: -3350px;
+    width: -3350px;
+    margin: 1675px; }
+  .circle:nth-child(97) {
+    animation: spin 5s -19.4s ease-in-out alternate infinite;
+    height: -3390px;
+    width: -3390px;
+    margin: 1695px; }
+  .circle:nth-child(98) {
+    animation: spin 5s -19.6s ease-in-out alternate infinite;
+    height: -3430px;
+    width: -3430px;
+    margin: 1715px; }
+  .circle:nth-child(99) {
+    animation: spin 5s -19.8s ease-in-out alternate infinite;
+    height: -3470px;
+    width: -3470px;
+    margin: 1735px; }
+  .circle:nth-child(100) {
+    animation: spin 5s -20s ease-in-out alternate infinite;
+    height: -3510px;
+    width: -3510px;
+    margin: 1755px; }
+  .circle:nth-child(101) {
+    animation: spin 5s -20.2s ease-in-out alternate infinite;
+    height: -3550px;
+    width: -3550px;
+    margin: 1775px; }
+  .circle:nth-child(102) {
+    animation: spin 5s -20.4s ease-in-out alternate infinite;
+    height: -3590px;
+    width: -3590px;
+    margin: 1795px; }
+  .circle:nth-child(103) {
+    animation: spin 5s -20.6s ease-in-out alternate infinite;
+    height: -3630px;
+    width: -3630px;
+    margin: 1815px; }
+  .circle:nth-child(104) {
+    animation: spin 5s -20.8s ease-in-out alternate infinite;
+    height: -3670px;
+    width: -3670px;
+    margin: 1835px; }
+  .circle:nth-child(105) {
+    animation: spin 5s -21s ease-in-out alternate infinite;
+    height: -3710px;
+    width: -3710px;
+    margin: 1855px; }
+  .circle:nth-child(106) {
+    animation: spin 5s -21.2s ease-in-out alternate infinite;
+    height: -3750px;
+    width: -3750px;
+    margin: 1875px; }
+  .circle:nth-child(107) {
+    animation: spin 5s -21.4s ease-in-out alternate infinite;
+    height: -3790px;
+    width: -3790px;
+    margin: 1895px; }
+  .circle:nth-child(108) {
+    animation: spin 5s -21.6s ease-in-out alternate infinite;
+    height: -3830px;
+    width: -3830px;
+    margin: 1915px; }
+  .circle:nth-child(109) {
+    animation: spin 5s -21.8s ease-in-out alternate infinite;
+    height: -3870px;
+    width: -3870px;
+    margin: 1935px; }
+  .circle:nth-child(110) {
+    animation: spin 5s -22s ease-in-out alternate infinite;
+    height: -3910px;
+    width: -3910px;
+    margin: 1955px; }
+  .circle:nth-child(111) {
+    animation: spin 5s -22.2s ease-in-out alternate infinite;
+    height: -3950px;
+    width: -3950px;
+    margin: 1975px; }
+  .circle:nth-child(112) {
+    animation: spin 5s -22.4s ease-in-out alternate infinite;
+    height: -3990px;
+    width: -3990px;
+    margin: 1995px; }
+  .circle:nth-child(113) {
+    animation: spin 5s -22.6s ease-in-out alternate infinite;
+    height: -4030px;
+    width: -4030px;
+    margin: 2015px; }
+  .circle:nth-child(114) {
+    animation: spin 5s -22.8s ease-in-out alternate infinite;
+    height: -4070px;
+    width: -4070px;
+    margin: 2035px; }
+  .circle:nth-child(115) {
+    animation: spin 5s -23s ease-in-out alternate infinite;
+    height: -4110px;
+    width: -4110px;
+    margin: 2055px; }
+  .circle:nth-child(116) {
+    animation: spin 5s -23.2s ease-in-out alternate infinite;
+    height: -4150px;
+    width: -4150px;
+    margin: 2075px; }
+  .circle:nth-child(117) {
+    animation: spin 5s -23.4s ease-in-out alternate infinite;
+    height: -4190px;
+    width: -4190px;
+    margin: 2095px; }
+  .circle:nth-child(118) {
+    animation: spin 5s -23.6s ease-in-out alternate infinite;
+    height: -4230px;
+    width: -4230px;
+    margin: 2115px; }
+  .circle:nth-child(119) {
+    animation: spin 5s -23.8s ease-in-out alternate infinite;
+    height: -4270px;
+    width: -4270px;
+    margin: 2135px; }
+  .circle:nth-child(120) {
+    animation: spin 5s -24s ease-in-out alternate infinite;
+    height: -4310px;
+    width: -4310px;
+    margin: 2155px; }
+  .circle:nth-child(121) {
+    animation: spin 5s -24.2s ease-in-out alternate infinite;
+    height: -4350px;
+    width: -4350px;
+    margin: 2175px; }
+  .circle:nth-child(122) {
+    animation: spin 5s -24.4s ease-in-out alternate infinite;
+    height: -4390px;
+    width: -4390px;
+    margin: 2195px; }
+  .circle:nth-child(123) {
+    animation: spin 5s -24.6s ease-in-out alternate infinite;
+    height: -4430px;
+    width: -4430px;
+    margin: 2215px; }
+  .circle:nth-child(124) {
+    animation: spin 5s -24.8s ease-in-out alternate infinite;
+    height: -4470px;
+    width: -4470px;
+    margin: 2235px; }
+  .circle:nth-child(125) {
+    animation: spin 5s -25s ease-in-out alternate infinite;
+    height: -4510px;
+    width: -4510px;
+    margin: 2255px; }
+  .circle:nth-child(126) {
+    animation: spin 5s -25.2s ease-in-out alternate infinite;
+    height: -4550px;
+    width: -4550px;
+    margin: 2275px; }
+  .circle:nth-child(127) {
+    animation: spin 5s -25.4s ease-in-out alternate infinite;
+    height: -4590px;
+    width: -4590px;
+    margin: 2295px; }
+  .circle:nth-child(128) {
+    animation: spin 5s -25.6s ease-in-out alternate infinite;
+    height: -4630px;
+    width: -4630px;
+    margin: 2315px; }
+  .circle:nth-child(129) {
+    animation: spin 5s -25.8s ease-in-out alternate infinite;
+    height: -4670px;
+    width: -4670px;
+    margin: 2335px; }
+  .circle:nth-child(130) {
+    animation: spin 5s -26s ease-in-out alternate infinite;
+    height: -4710px;
+    width: -4710px;
+    margin: 2355px; }
+  .circle:nth-child(131) {
+    animation: spin 5s -26.2s ease-in-out alternate infinite;
+    height: -4750px;
+    width: -4750px;
+    margin: 2375px; }
+  .circle:nth-child(132) {
+    animation: spin 5s -26.4s ease-in-out alternate infinite;
+    height: -4790px;
+    width: -4790px;
+    margin: 2395px; }
+  .circle:nth-child(133) {
+    animation: spin 5s -26.6s ease-in-out alternate infinite;
+    height: -4830px;
+    width: -4830px;
+    margin: 2415px; }
+  .circle:nth-child(134) {
+    animation: spin 5s -26.8s ease-in-out alternate infinite;
+    height: -4870px;
+    width: -4870px;
+    margin: 2435px; }
+  .circle:nth-child(135) {
+    animation: spin 5s -27s ease-in-out alternate infinite;
+    height: -4910px;
+    width: -4910px;
+    margin: 2455px; }
+  .circle:nth-child(136) {
+    animation: spin 5s -27.2s ease-in-out alternate infinite;
+    height: -4950px;
+    width: -4950px;
+    margin: 2475px; }
+  .circle:nth-child(137) {
+    animation: spin 5s -27.4s ease-in-out alternate infinite;
+    height: -4990px;
+    width: -4990px;
+    margin: 2495px; }
+  .circle:nth-child(138) {
+    animation: spin 5s -27.6s ease-in-out alternate infinite;
+    height: -5030px;
+    width: -5030px;
+    margin: 2515px; }
+  .circle:nth-child(139) {
+    animation: spin 5s -27.8s ease-in-out alternate infinite;
+    height: -5070px;
+    width: -5070px;
+    margin: 2535px; }
+  .circle:nth-child(140) {
+    animation: spin 5s -28s ease-in-out alternate infinite;
+    height: -5110px;
+    width: -5110px;
+    margin: 2555px; }
+  .circle:nth-child(141) {
+    animation: spin 5s -28.2s ease-in-out alternate infinite;
+    height: -5150px;
+    width: -5150px;
+    margin: 2575px; }
+  .circle:nth-child(142) {
+    animation: spin 5s -28.4s ease-in-out alternate infinite;
+    height: -5190px;
+    width: -5190px;
+    margin: 2595px; }
+  .circle:nth-child(143) {
+    animation: spin 5s -28.6s ease-in-out alternate infinite;
+    height: -5230px;
+    width: -5230px;
+    margin: 2615px; }
+  .circle:nth-child(144) {
+    animation: spin 5s -28.8s ease-in-out alternate infinite;
+    height: -5270px;
+    width: -5270px;
+    margin: 2635px; }
+  .circle:nth-child(145) {
+    animation: spin 5s -29s ease-in-out alternate infinite;
+    height: -5310px;
+    width: -5310px;
+    margin: 2655px; }
+  .circle:nth-child(146) {
+    animation: spin 5s -29.2s ease-in-out alternate infinite;
+    height: -5350px;
+    width: -5350px;
+    margin: 2675px; }
+  .circle:nth-child(147) {
+    animation: spin 5s -29.4s ease-in-out alternate infinite;
+    height: -5390px;
+    width: -5390px;
+    margin: 2695px; }
+  .circle:nth-child(148) {
+    animation: spin 5s -29.6s ease-in-out alternate infinite;
+    height: -5430px;
+    width: -5430px;
+    margin: 2715px; }
+  .circle:nth-child(149) {
+    animation: spin 5s -29.8s ease-in-out alternate infinite;
+    height: -5470px;
+    width: -5470px;
+    margin: 2735px; }
+  .circle:nth-child(150) {
+    animation: spin 5s -30s ease-in-out alternate infinite;
+    height: -5510px;
+    width: -5510px;
+    margin: 2755px; }
+
+@keyframes spin {
+  80% {
+    transform: rotate(-200deg); }
+  100% {
+    transform: rotate(200deg); } }

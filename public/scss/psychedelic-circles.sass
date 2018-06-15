@@ -1,0 +1,40 @@
+$CONTAINER_SIZE: 500px
+$NUM_CIRCLES: 150
+
+body
+	background: #000
+
+ul
+	padding: 0
+	margin: 0
+	list-style: none
+
+.container, .circle
+	position: absolute
+	top: 50%
+	left: 50%
+	background-image: linear-gradient(#c0392b 10%, #2980b9 25%, #27ae60 75%, #9b59b6 75%, #f1c40f 75%)
+	background-size: 5px 100px
+	background-position: center
+
+.container
+	transform: translate(-50%, -50%)
+	height: $CONTAINER_SIZE
+	width: $CONTAINER_SIZE
+	border-radius: $CONTAINER_SIZE * 10 / 100
+
+.circle
+	border-radius: 100%
+	@for $i from 2 through $NUM_CIRCLES
+		&:nth-child(#{$i})
+			$size: $CONTAINER_SIZE - $i * 40px - 10px
+			animation: spin 5s -#{$i/5}s ease-in-out alternate infinite
+			height: $size
+			width: $size
+			margin: -$size / 2
+
+@keyframes spin
+	80%
+		transform: rotate(-200deg)
+	100%
+		transform: rotate(200deg)

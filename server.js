@@ -98,7 +98,7 @@ app.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-const routes = require('./routes');
+const routes = require('./routes/routes.index');
 app.use('/', [isLoggedIn, routes]);
 
 // app.use('/albums', require('./app/controllers/albums'));
