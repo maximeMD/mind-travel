@@ -15,7 +15,11 @@
         <div class="image-container col-md-2" style="background-image:url('/private/album_thumbnail/<%=image.album%>/<%= image.src_thumbnail%>')">
           <div class="action-container">
             <button type="button" class="btn" data-toggle="modal" data-target="#newImageModal"><span class="fa fa-edit" aria-hidden="true" ></span></button>
-            <button type="button" class="btn"><span class="fa fa-remove" aria-hidden="true"></span></button>
+            <form action="/admin/images/delete" method="post">
+              <input type='hidden' name='imageId' value='<%= image.id %>'>
+              <input type='hidden' name='albumName' value='<%= image.album %>'>
+              <button type="submit" class="btn"value="submitDelete"><span class="fa fa-remove" aria-hidden="true"></span></button>
+            </form>
           </div>
         </div>
       <% }); %>

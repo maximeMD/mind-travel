@@ -7,4 +7,7 @@ admin.get('/', (req, res) => {
 const albums = require('./albums');
 admin.use('/albums', albums);
 
+const images = require('./images');
+admin.use('/images', images);
+
 module.exports = admin;
