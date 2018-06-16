@@ -14,7 +14,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var configDB = require('./config/database.js');
+var configDB = require('./config/config.database');
 
 var path = require('path');
 
@@ -42,9 +42,9 @@ app.use(express.static(path.join(__dirname, 'public')));// set public path
 
 // required for passport
 app.use(session({
-  secret: 'turnontuneinedropoutbytimleary', // session secret
-  resave: true,
-  saveUninitialized: false
+    secret: 'turnontuneinedropoutbytimleary', // session secret
+    resave: true,
+    saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -67,7 +67,6 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
-
 
 app.use('/private', [isLoggedIn, express.static(path.join(__dirname, 'private'))]);
 
@@ -94,15 +93,28 @@ app.get('/signup', function(req, res) {
     res.render('signup.ejs', { message: req.flash('signupMessage') });
 });
 app.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
+    req.logout();
+    res.redirect('/');
 });
 
-const routes = require('./routes/routes.index');
+const routes = require('./routes/route.index');
 app.use('/', [isLoggedIn, routes]);
 
 // app.use('/albums', require('./app/controllers/albums'));
 
 // launch ======================================================================
-app.listen(port);
+
+// http server
+var http = require('http');
+http.createServer(app).listen(port);
+
+// https server
+var https = require('https');
+var options = {
+    key: fs.readFileSync('./keys/agent2-key.pem'),
+    cert: fs.readFileSync('./keys/agent2-cert.cert')
+};  
+https.createServer(options, app).listen(443);
+
+
 console.log('The magic happens on port ' + port);

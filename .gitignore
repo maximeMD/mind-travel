@@ -21,6 +21,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # images folder
-/private
-/public/album
-/public/album_thumbnail
+/private/*
+/public/album/*
+/public/album_thumbnail/*
+
+# ssl certificates
+/key/*

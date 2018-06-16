@@ -1,5 +1,5 @@
-const Album = require('../../../app/models/album');
-const Image = require('../../../app/models/image');
+const Album = require('../../../app/models/model.album');
+const Image = require('../../../app/models/model.image');
 
 var multer = require('multer');
 var fs = require('fs');
@@ -7,7 +7,7 @@ var thumb = require('node-thumbnail').thumb;
 var sizeOf = require('image-size');
 var mime = require('mime');
 
-var resources = require('../../../config/resources.js');
+var resources = require('../../../config/config.resources');
 
 module.exports = (req, res) => {
   //find the corresponding Album in database
