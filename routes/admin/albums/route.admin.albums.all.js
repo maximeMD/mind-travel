@@ -1,4 +1,4 @@
-const Album = require('../../../app/models/album');
+const Album = require('../../../app/models/model.album');
 
 module.exports = (req, res) => {
   Album.find({}, function(err, albums){

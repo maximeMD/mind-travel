@@ -1,7 +1,7 @@
-const Album = require('../../../app/models/album');
-const Image = require('../../../app/models/image');
+const Album = require('../../../app/models/model.album');
+const Image = require('../../../app/models/model.image');
 
-const resources = require('../../../config/resources');
+const resources = require('../../../config/config.resources');
 
 const del = require('del');
 

@@ -1,5 +1,5 @@
-const Album = require('../../app/models/album');
-const Image = require('../../app/models/image');
+const Album = require('../../app/models/model.album');
+const Image = require('../../app/models/model.image');
 
 module.exports = (req, res) => {
   Image.find({'album':req.params.name}, function(err, images){
