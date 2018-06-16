@@ -6,14 +6,14 @@ var Schema = mongoose.Schema;
 var albumSchema = new Schema({
 
   name: String,
-  src: String
+  thumb: String
 
 });
 
-albumSchema.methods.testy = function(){
-  this.name = this.name+"testtest";
-  return this.name;
-}
+// albumSchema.methods.testy = function(){
+//   this.name = this.name+"testtest";
+//   return this.name;
+// }
 
 // create the model for album and expose it to our app
 module.exports = mongoose.model('Album', albumSchema);

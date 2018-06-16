@@ -1,8 +1,8 @@
 var fs = require('fs');
 var thumb = require('node-thumbnail').thumb;
-var resources = require('../../config/resources.js');
+var resources = require('../../config/config.resources.js');
 
-// var resources = require('../../config/resources.js');
+// var resources = require('../../config/config.resources.js');
 
 module.exports = {
   createThumb: function(album){

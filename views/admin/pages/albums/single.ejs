@@ -39,7 +39,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="/admin/albums/upload/<%=album%>" method="post" id="uploadForm" enctype="multipart/form-data">
+          <form action="/admin/albums/upload/<%=album.id%>" method="post" id="uploadForm" enctype="multipart/form-data">
             <input type="file" name="userPhoto" multiple />
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

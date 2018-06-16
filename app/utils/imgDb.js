@@ -1,4 +1,4 @@
-var resources = require('../../config/resources.js');
+var resources = require('../../config/config.resources.js');
 
 var fs = require('fs');
 var mongoose = require('mongoose');
@@ -7,7 +7,7 @@ var sizeOf = require('image-size');
 
 var Image = require('../models/image.js');
 
-var configDB = require('../../config/database.js');
+var configDB = require('../../config/config.database.js');
 
 var each = require('async-each');
 
