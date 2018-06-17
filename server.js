@@ -18,6 +18,8 @@ var session      = require('express-session');
 
 var configDB = require('./config/config.database');
 
+var settings = require('./config/config.settings');
+
 var path = require('path');
 
 var fs = require('fs');
@@ -113,13 +115,15 @@ http.createServer(app).listen(httpPort);
 console.log('(HTTP) The magic happens on port ' + httpPort);
 
 // https server
-var https = require('https');
-var options = {
-    key: fs.readFileSync('./keys/client-key.pem'),
-    cert: fs.readFileSync('./keys/client-cert.pem')
-};  
-https.createServer(options, app).listen(httpsPort);
-console.log('(HTTPS) The safe magic happens on port ' + httpsPort);
+if(setting.allowHttps){
+    var https = require('https');
+    var options = {
+        key: fs.readFileSync('./keys/client-key.pem'),
+        cert: fs.readFileSync('./keys/client-cert.pem')
+    };  
+    https.createServer(options, app).listen(httpsPort);
+    console.log('(HTTPS) The safe magic happens on port ' + httpsPort);
+}
 
 
 
