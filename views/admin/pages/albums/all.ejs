@@ -37,18 +37,35 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+          <button id="btnNewAlbum" type="submit" class="btn btn-primary" value="submit">Submit</button>
         </div>
       </form>
     </div>
   </div>
 </div>
 
-    <script src="js/photoswipe_init.js"></script>
+  <!-- <script src="js/photoswipe_init.js"></script> -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+  <script>
+  $("#btnNewAlbum").click(function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "/admin/albums/create",
+        data: { 
+          albumName: $("#albumName").val()
+        },
+        success: function(result) {
+          location.reload();
+        },
+        error: function(result) {
+          alert(result.responseText);
+        }
+    });
+});
+  </script>
 
   </body>
 </html>
