@@ -115,7 +115,7 @@ http.createServer(app).listen(httpPort);
 console.log('(HTTP) The magic happens on port ' + httpPort);
 
 // https server
-if(setting.allowHttps){
+if(settings.allowHttps){
     var https = require('https');
     var options = {
         key: fs.readFileSync('./keys/client-key.pem'),
