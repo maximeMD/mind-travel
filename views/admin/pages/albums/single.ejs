@@ -8,8 +8,6 @@
   <body>
     <% include ../../partials/header.ejs %>
 
-    <div id="albumId"><%= album.id%></div>
-
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#newAlbumModal">Upload</button>
     <!-- <span id = "status"></span> -->
     <div class="row">
@@ -43,6 +41,9 @@
           </div>
           <form action="/admin/images/upload/<%=album.id%>" method="post" id="uploadForm" enctype="multipart/form-data">
             <input type="file" name="userPhoto" multiple />
+            <div class="progress">
+              <div class="progress-bar" id="progress-img-upload" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <input type="submit" class="btn btn-primary" value="Submit" name="submit"></input>
@@ -95,13 +96,15 @@
     });
     </script> -->
     <script>
+      var albumId = "<%= album.id %>";
+      
       $('#uploadForm').submit(function(e) {
 
         var formData = new FormData(this);
 
         $.ajax({
             type:'POST',
-            url: '/admin/images/upload/'+$("#albumId").text(),
+            url: '/admin/images/upload/'+albumId,
             data:formData,
             xhr: function() {
                     var myXhr = $.ajaxSettings.xhr();
@@ -138,11 +141,17 @@
           var current = e.loaded;
 
           var Percentage = (current * 100)/max;
-          console.log(Percentage);
+          // console.log(Percentage);
+          $("#progress-img-upload").text("Uploading images ...");
+          $("#progress-img-upload").attr("aria-valuenow", Percentage);
+          $("#progress-img-upload").attr("style", "width:"+Percentage+"%");
 
 
           if(Percentage >= 100)
           {
+            $("#progress-img-upload").text("Server is processing the images ...");
+            $("#progress-img-upload").addClass("progress-bar-striped progress-bar-animated");
+
             location.reload();
           }
       }  

@@ -38,7 +38,6 @@ module.exports = (req, res) => {
     upload(req,res,function(err){
       if (err) throw err;
       req.files.forEach(function(image){
-        console.log(image);
         //upload to database
         var dimensions = sizeOf(dirName+'/'+image.filename);
         var img_doc = new Image({
@@ -50,21 +49,21 @@ module.exports = (req, res) => {
         });
         img_doc.save(function (err) {
           if (err) return handleError(err);
-          // saved!
+          console.log(image.filename + ' : Image saved');
         });
         // create thumb
         thumb({
           source: dirName +'/'+image.filename,
           destination: resources.thumbnails+album.id
         }, function(files, err, stdout, stderr) {
-          console.log('All done!');
+          console.log(image.filename + ' : Thumb created');
         });
         // set thumbnail to the album if it hasn't one yet
         if(album.src_thumbnail === "0"){
           album.src_thumbnail = image.filename.split("."+mime.getExtension(image.mimetype),1) +'_thumb' + "." + mime.getExtension(image.mimetype);
           Album.findByIdAndUpdate(album.id, album, function(err, updatedAlbum){
             if (err) throw err;
-            console.log("thumbnail added to album " + updatedAlbum.name);
+            console.log("Thumbnail added to album " + updatedAlbum.name);
           });
         }
       });
