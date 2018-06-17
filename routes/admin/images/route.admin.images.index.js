@@ -6,4 +6,7 @@ const images = require('express').Router();
 const deleteImage = require('./route.admin.images.delete');
 images.post('/delete', deleteImage);
 
+const uploadImages = require('./route.admin.images.upload');
+images.post('/upload/:id', uploadImages);
+
 module.exports = images;

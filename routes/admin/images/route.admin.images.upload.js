@@ -34,7 +34,7 @@ module.exports = (req, res) => {
       }
     });
     //upload the files
-    var upload = multer({ storage : storage }).array('userPhoto',500);
+    var upload = multer({ storage : storage }).array('userPhoto',1000);
     upload(req,res,function(err){
       if (err) throw err;
       req.files.forEach(function(image){
@@ -60,8 +60,8 @@ module.exports = (req, res) => {
           console.log('All done!');
         });
         // set thumbnail to the album if it hasn't one yet
-        if(album.src === null){
-          album.src = image.filename.split("."+mime.getExtension(image.mimetype),1) +'_thumb' + "." + mime.getExtension(image.mimetype);
+        if(album.src_thumbnail === "0"){
+          album.src_thumbnail = image.filename.split("."+mime.getExtension(image.mimetype),1) +'_thumb' + "." + mime.getExtension(image.mimetype);
           Album.findByIdAndUpdate(album.id, album, function(err, updatedAlbum){
             if (err) throw err;
             console.log("thumbnail added to album " + updatedAlbum.name);

@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var albumSchema = new Schema({
 
   name: String,
-  thumb: String
+  src_thumbnail: String
 
 });
 
