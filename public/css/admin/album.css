@@ -1,6 +1,7 @@
 .image-container{
   height:200px;
   text-align: center;
+  background-size: cover;
 }
 .action-container{
   padding-top: 30%;

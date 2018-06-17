@@ -21,9 +21,23 @@ opacity: 1;
 .hover01:hover img {
   opacity: .5;
 }
-.gallery{
+/* .gallery{
   text-align: justify;
   padding-left: 10%;
   padding-right: 10%;
 	padding-top: 50px;
+} */
+
+.image-container{
+  height:200px;
+	text-align: center;
+	background-size: cover;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.img-thumb{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 }
