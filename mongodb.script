@@ -1,0 +1,9 @@
+db.createUser(
+  {
+    user: "mind-travel",
+    pwd: "M!ndTr@vel42",
+    roles: [
+       { role: "readWrite", db: "mind-travel" },
+    ]
+  }
+)

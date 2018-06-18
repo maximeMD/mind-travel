@@ -1,0 +1,21 @@
+version: "2"
+services:
+  app:
+    container_name: mind-travel-app
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - mongo
+  mongo:
+    container_name: mind-travel-mongo
+    image: mongo
+    # volumes:
+    #   - ./data:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mindtravel
+      MONGO_INITDB_ROOT_PASSWORD: M1ndTr4v3l
+      MONGO_INITDB_DATABASE: mindtravel
