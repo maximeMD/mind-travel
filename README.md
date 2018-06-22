@@ -10,7 +10,7 @@ Mind Travel is a picture library webapp based on Node.js
 First, you need to clone this repository :
 `git clone https://github.com/maximeMD/mind-travel`
 
-Then, you can choose tha "manual" installation or the Docker installation (work in progress)
+Then, you can choose the "manual" installation or the Docker installation (work in progress)
 
 #### Manual
 
