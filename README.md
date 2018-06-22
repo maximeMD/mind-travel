@@ -1,17 +1,18 @@
-# mind-travel
+# Mind Travel
+## A very simple and trippy portfolio for Node.js
 
-## Introduction
+### Introduction
 
 Mind Travel is a picture library webapp based on Node.js
 
-## Installation
+### Installation
 
 First, you need to clone this repository :
 `git clone https://github.com/maximeMD/mind-travel`
 
 Then, you can choose tha "manual" installation or the Docker installation (work in progress)
 
-### Manual
+#### Manual
 
 Go to the app directory and install node packages with npm :
  `cd mind-travel`
