@@ -1,14 +1,14 @@
 var fs = require('fs');
 var thumb = require('node-thumbnail').thumb;
-var resources = require('../../config/config.resources.js');
 
-// var resources = require('../../config/config.resources.js');
+var settings = require('../../config/config.settings');
+
 
 module.exports = {
   createThumb: function(album){
     thumb({
-      source: '../../'+resources.album+album,
-      destination: '../../'+resources.thumbnails+album
+      source: '../../'+settings.pathAlbums+album,
+      destination: '../../'+settings.pathThumbnails+album
     }).then(function() {
       console.log('Success');
     }).catch(function(e) {

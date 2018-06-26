@@ -16,8 +16,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var configDB = require('./config/config.database');
-
 var settings = require('./config/config.settings');
 
 var path = require('path');
@@ -25,14 +23,8 @@ var path = require('path');
 var fs = require('fs');
 
 
-
-// var imgThumb = require('./app/utils/imgThumb.js')
-//
-// // create thumb
-// imgThumb.createThumb('psyfi2017');
-
 // configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
+mongoose.connect(settings.mongoUrl); // connect to our database
 
 require('./config/config.passport')(passport); // pass passport for configuration
 

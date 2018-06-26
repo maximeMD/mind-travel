@@ -7,7 +7,7 @@ var thumb = require('node-thumbnail').thumb;
 var sizeOf = require('image-size');
 var mime = require('mime');
 
-var resources = require('../../../config/config.resources');
+var settings = require('../../../config/config.settings');
 
 module.exports = (req, res) => {
   //find the corresponding Album in database
@@ -15,13 +15,13 @@ module.exports = (req, res) => {
   Album.findById(req.params.id, function(err, album){
     if (err) throw err;
 
-    var dirName = resources.albums+album.id;
+    var dirName = settings.pathAlbums+album.id;
     //create upload folders if it doesn't exists
     if (!fs.existsSync(dirName)){
         fs.mkdirSync(dirName);
     }
-    if (!fs.existsSync(resources.thumbnails+album.id)){
-        fs.mkdirSync(resources.thumbnails+album.id);
+    if (!fs.existsSync(settings.pathThumbnails+album.id)){
+        fs.mkdirSync(settings.pathThumbnails+album.id);
     }
   
     //define the storage for multer (upload module)
@@ -54,7 +54,7 @@ module.exports = (req, res) => {
         // create thumb
         thumb({
           source: dirName +'/'+image.filename,
-          destination: resources.thumbnails+album.id
+          destination: settings.pathThumbnails+album.id
         }, function(files, err, stdout, stderr) {
           console.log(image.filename + ' : Thumb created');
         });

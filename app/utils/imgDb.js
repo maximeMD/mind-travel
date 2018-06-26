@@ -1,5 +1,3 @@
-var resources = require('../../config/config.resources.js');
-
 var fs = require('fs');
 var mongoose = require('mongoose');
 var sizeOf = require('image-size');
@@ -7,18 +5,18 @@ var sizeOf = require('image-size');
 
 var Image = require('../models/image.js');
 
-var configDB = require('../../config/config.database.js');
+var settings = require('../../config/config.settings');
 
 var each = require('async-each');
 
 module.exports = {
   insertAlbumImages: function(album){
 
-    var img = fs.readdirSync(resources.albums+album+'/');
+    var img = fs.readdirSync(settings.pathAlbums+album+'/');
 
     var img_name = [];
 
-    mongoose.connect(configDB.url);
+    mongoose.connect(settings.mongoUrl);
     var db = mongoose.connection;
 
 
@@ -26,7 +24,7 @@ module.exports = {
       img_name[i] = img[i].split(".jpg",1)
 
       // console.log('public/'+img_list[i]);
-      var dimensions = sizeOf(resources.albums+album+'/'+img[i]);
+      var dimensions = sizeOf(settings.pathAlbums+album+'/'+img[i]);
 
       var img_doc = new Image({
         src: img[i],
@@ -49,7 +47,7 @@ module.exports = {
     //   if (error) console.error(error);
     //
     //   // console.log('public/'+img_list[i]);
-    //   var dimensions = sizeOf(resources.albums+album+'/'+image);
+    //   var dimensions = sizeOf(settings.pathAlbums+album+'/'+image);
     //
     //   var img_doc = new Image({
     //     src: image,
