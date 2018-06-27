@@ -21,7 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # images folder
-/private/*
+/private/album/*
+/private/album_thumbnail/*
 /public/album/*
 /public/album_thumbnail/*
 
