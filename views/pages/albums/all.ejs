@@ -11,10 +11,10 @@
       <div class="album-container row no-gutters">
         <% var newline=true %>
         <% albums.forEach(function(album) { %>
-          <div class="col-md-6">
+          <div class="col-md-6" style="background-image:url(/private/album_thumbnail/<%= album.id %>/<%= album.src_thumbnail %>)">
             <a href="/albums/<%= album.id %>">
               <div class="album-padding"></div>
-              <div class="album-block album-hover" style="background-image:url(/private/album_thumbnail/<%= album.id %>/<%= album.src_thumbnail %>)">
+              <div class="album-block album-hover" >
                   <div class="album-name"><%= album.name %></div>
               </div>
             </a>
