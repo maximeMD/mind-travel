@@ -6,3 +6,7 @@
 .action-container{
   padding-top: 30%;
 }
+
+.action-container button.albumThumb{
+  background-color : #2ecc71;
+}

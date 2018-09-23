@@ -14,7 +14,9 @@ module.exports = (req, res) => {
       if(album.src_thumbnail == image.src_thumbnail){
         Image.findOne({'album' : album.id}, function(err,newImageThumb){
           // if(err) throw err;
-          Album.findByIdAndUpdate(album.id, {"src_thumbnail":newImageThumb.src_thumbnail});
+          Album.findByIdAndUpdate(album.id, {"src_thumbnail":newImageThumb.src_thumbnail}, function(err, result){
+            console.log("Album thumbnail changed by first image");
+          });
         });
       }
     });
