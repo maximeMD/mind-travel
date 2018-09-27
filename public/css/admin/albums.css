@@ -1,0 +1,5 @@
+.album-table-row:hover{
+    cursor: pointer;
+    background-color: #f2fce1;
+    transition: background-color 0.2s;
+}
