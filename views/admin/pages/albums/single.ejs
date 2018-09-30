@@ -7,37 +7,37 @@
   </head>
   <body>
     <% include ../../partials/header.ejs %>
-
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#newAlbumModal">Upload</button>
-    <!-- <span id = "status"></span> -->
-    <div class="row">
-      <% images.forEach(function(image) { %>
-        <div class="image-container col-md-2" style="background-image:url('/private/album_thumbnail/<%=image.album%>/<%= image.src_thumbnail %>')">
-          <div class="action-container">
-            <button type="button" class="btn" data-toggle="modal" data-target="#newImageModal"><span class="fa fa-edit" aria-hidden="true" ></span></button>
-            <form action="/admin/images/setAlbumThumb" method="post">
-              <input type='hidden' name='imageId' value='<%= image.id %>'>              
-              <button type="submit" class="btn
-                <% if (image.src_thumbnail == album.src_thumbnail) { %> 
-                  albumThumb
-                <% } %>
-                " value="submitSetAlbumThumb">
-              
-                <span class="fa fa-eye" aria-hidden="true" ></span>
-              </button>
-            </form>
-            <form action="/admin/images/delete" method="post">
-              <input type='hidden' name='imageId' value='<%= image.id %>'>
-              <input type='hidden' name='albumName' value='<%= image.album %>'>
-              <input type='hidden' name='imageSrc' value='<%= image.src %>'>
-              <input type='hidden' name='imageSrcThumb' value='<%= image.src_thumbnail %>'>
-              <button type="submit" class="btn"value="submitDelete"><span class="fa fa-remove" aria-hidden="true"></span></button>
-            </form>
+    <div class="container">
+      <div class="action-bar">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#newAlbumModal">Upload</button>
+      </div>
+      <div class="row">
+        <% images.forEach(function(image) { %>
+          <div class="image-container col-md-2" style="background-image:url('/private/album_thumbnail/<%=image.album%>/<%= image.src_thumbnail %>')">
+            <div class="action-container">
+              <button type="button" class="btn" data-toggle="modal" data-target="#newImageModal"><span class="fa fa-edit" aria-hidden="true" ></span></button>
+              <form action="/admin/images/setAlbumThumb" method="post">
+                <input type='hidden' name='imageId' value='<%= image.id %>'>              
+                <button type="submit" class="btn
+                  <% if (image.src_thumbnail == album.src_thumbnail) { %> 
+                    albumThumb
+                  <% } %>
+                  " value="submitSetAlbumThumb">
+                
+                  <span class="fa fa-eye" aria-hidden="true" ></span>
+                </button>
+              </form>
+              <form action="/admin/images/delete" method="post">
+                <input type='hidden' name='imageId' value='<%= image.id %>'>
+                <input type='hidden' name='albumName' value='<%= image.album %>'>
+                <input type='hidden' name='imageSrc' value='<%= image.src %>'>
+                <input type='hidden' name='imageSrcThumb' value='<%= image.src_thumbnail %>'>
+                <button type="submit" class="btn"value="submitDelete"><span class="fa fa-remove" aria-hidden="true"></span></button>
+              </form>
+            </div>
           </div>
-        </div>
-      <% }); %>
-    </div>
-
+        <% }); %>
+      </div>
     </div>
 
     <!-- Upload Files Modal -->
