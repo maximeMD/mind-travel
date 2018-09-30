@@ -6,8 +6,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/albums">Albums</a>
@@ -18,3 +18,20 @@
     </ul>
   </div>
 </nav>
+
+<script>
+var nav = "<%= nav%>" ;
+
+var navItems = document.getElementsByClassName("nav-item");
+
+switch(nav){
+
+  case "home":
+  navItems[0].classList.add("active");
+    break;
+
+  case "albums":
+  navItems[1].classList.add("active");
+    break;
+}
+</script>

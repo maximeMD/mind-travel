@@ -4,3 +4,14 @@ body{
 body .container{
     background-color: white;
 }
+
+.action-bar{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.empty-page{
+    padding: 10em;
+    text-align:center;
+    color:#bdc3c7;
+}

@@ -6,6 +6,7 @@ module.exports = (req, res) => {
     //   {"$group" : {_id:"$source", count:{$sum:1}}}
     // ])    
     res.render('admin/pages/albums/all', {
+      nav: "albums",
       user : req.user,
       albums: albums
     });

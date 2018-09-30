@@ -1,7 +1,9 @@
 const admin = require('express').Router();
 
 admin.get('/', (req, res) => {
-  res.render('admin/index');
+  res.render('admin/index', {
+    nav: "dashboard"
+  }) ;
 });
 
 const albums = require('./albums/route.admin.albums.index');

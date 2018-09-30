@@ -1,7 +1,10 @@
 const routes = require('express').Router();
 
 routes.get('/home', (req, res) => {
-  res.render('pages/home.ejs', { user: req.user });
+  res.render('pages/home.ejs', { 
+    nav: "home",
+    user: req.user 
+  });
 });
 
 const albums = require('./albums/route.albums.index');

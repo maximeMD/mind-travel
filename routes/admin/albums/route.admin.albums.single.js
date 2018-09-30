@@ -7,6 +7,7 @@ module.exports = (req, res) => {
     Image.find({'album':album.id}, function(err, images){
       if (err) throw err;
       res.render('admin/pages/albums/single', {
+        nav: "albums",
         user : req.user,
         images: images,
         album: album
