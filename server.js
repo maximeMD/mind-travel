@@ -97,7 +97,14 @@ app.get('/logout', function(req, res) {
 const routes = require('./routes/route.index');
 app.use('/', [isLoggedIn, routes]);
 
-// app.use('/albums', require('./app/controllers/albums'));
+// Check if the album and album_thumbail folders exist. If not, throw an error
+if(!fs.existsSync(settings.pathAlbums)){
+    throw new Error("Album folder does not exist. Check your config.settings.js")
+}
+if(!fs.existsSync(settings.pathThumbnails)){
+    throw new Error("Thumbnail folder does not exist. Check your config.settings.js")
+}
+
 
 // launch ======================================================================
 
