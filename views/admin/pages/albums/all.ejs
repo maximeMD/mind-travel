@@ -27,7 +27,7 @@
                 <td>X</td>
                 <td>Workin Prog</td>
                 <td>
-                  <button type="submit" class="btn delete-album-btn"  data-toggle="modal" data-target="#deleteAlbumModal">
+                  <button type="submit" class="btn delete-btn"  data-toggle="modal" data-target="#deleteAlbumModal">
                     <span class="fa fa-remove" aria-hidden="true" >
                   </button>
                 </td>
@@ -78,9 +78,8 @@
           Do you really want to delete this album : <b><span id="deleteAlbumModalAlbumName"></span></b>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        
-            <input id="deleteAlbumModalAlbumId" type='hidden' name='id' value=''  value="submitDelete"/>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>                        
+            <input id="deleteAlbumModalAlbumId" type='hidden' name='id' value=''/>
             <button type="submit" class="btn btn-danger" >
               Delete
             </button>
@@ -115,7 +114,7 @@
   // redirect to album when click on row
   $('.album-table-row').click(function(){
     // check if the mouse isn't on an action button
-    if ($('.delete-album-btn:hover').length == 0) {
+    if ($('.delete-btn:hover').length == 0) {
       window.location = $(this).data('href');
     }
     else{
