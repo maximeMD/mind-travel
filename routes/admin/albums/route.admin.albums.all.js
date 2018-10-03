@@ -1,14 +1,15 @@
 const Album = require('../../../app/models/model.album');
 
 module.exports = (req, res) => {
-  Album.find({}, function(err, albums){
-    // Image.aggregate([
-    //   {"$group" : {_id:"$source", count:{$sum:1}}}
-    // ])    
-    res.render('admin/pages/albums/all', {
-      nav: "albums",
-      user : req.user,
-      albums: albums
+  try{
+    Album.find({}, function(err, albums){
+      res.render('admin/pages/albums/all', {
+        nav: "albums",
+        user : req.user,
+        albums: albums
+      });
     });
-  });
+  } catch (error) {
+    res.status(500).json({error: error.toString()});
+  }
 };

@@ -1,10 +1,14 @@
 const routes = require('express').Router();
 
 routes.get('/home', (req, res) => {
-  res.render('pages/home.ejs', { 
-    nav: "home",
-    user: req.user 
-  });
+  try{
+    res.render('pages/home.ejs', { 
+      nav: "home",
+      user: req.user 
+    });
+  } catch (error) {
+    res.status(500).json({error: error.toString()});
+  }
 });
 
 const albums = require('./albums/route.albums.index');
