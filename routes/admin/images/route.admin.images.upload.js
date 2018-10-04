@@ -67,8 +67,8 @@ module.exports = (req, res) => {
         });
         // create thumb
         thumb({
-          source: 'private/album/5bb602ff61eaa53ef0997bde',
-          destination: 'private/album_thumbnail/5bb602ff61eaa53ef0997bde',
+          source: settings.pathAlbums + albumId,
+          destination: settings.pathThumbnails + albumId,
           concurrency: 1
         }, function(files, err, stdout, stderr) {
           console.log('Thumbs created');
