@@ -11,11 +11,16 @@ var settings = require('../../../config/config.settings');
 
 module.exports = (req, res) => {
   try{
+    var albumId;
+    var dirName;
+
     //find the corresponding Album in database
     Album.findById(req.params.id, function(err, album){
       if (err) throw err;
       
-      var dirName = settings.pathAlbums+album.id;
+      albumId = album.id;
+
+      dirName = settings.pathAlbums+album.id;
       //create upload folders if it doesn't exists
       if (!fs.existsSync(dirName)){
         fs.mkdirSync(dirName);
@@ -50,14 +55,7 @@ module.exports = (req, res) => {
           img_doc.save(function (err) {
             if (err) return handleError(err);
             console.log(image.filename + ' : Image saved');
-          });
-          // create thumb
-          thumb({
-            source: dirName +'/'+image.filename,
-            destination: settings.pathThumbnails+album.id
-          }, function(files, err, stdout, stderr) {
-            console.log(image.filename + ' : Thumb created');
-          });
+          });          
           // set thumbnail to the album if it hasn't one yet
           if(album.src_thumbnail === "0"){
             album.src_thumbnail = image.filename.split("."+mime.getExtension(image.mimetype),1) +'_thumb' + "." + mime.getExtension(image.mimetype);
@@ -67,9 +65,21 @@ module.exports = (req, res) => {
             });
           }
         });
-        res.redirect("/admin/albums/"+album.id);
+        // create thumb
+        thumb({
+          source: 'private/album/5bb602ff61eaa53ef0997bde',
+          destination: 'private/album_thumbnail/5bb602ff61eaa53ef0997bde',
+          concurrency: 1
+        }, function(files, err, stdout, stderr) {
+          console.log('Thumbs created');
+          res.redirect("/admin/albums/"+albumId);
+        });  
       });
+    }).then(function(){
+      
     });
+
+
   } catch (error) {
     res.status(500).json({error: error.toString()});
   }
