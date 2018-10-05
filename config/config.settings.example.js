@@ -10,5 +10,8 @@ module.exports = {
 
     // Image data repository path
     'pathAlbums' : 'private/album/',
-    'pathThumbnails' : 'private/album_thumbnail/'
+    'pathThumbnails' : 'private/album_thumbnail/',
+
+    // Passport settings
+    'passportSecret' : 'ChangeThisDefaultPassportSecretKey'
 };

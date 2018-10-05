@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));// set public path
 
 // required for passport
 app.use(session({
-    secret: 'turnontuneinedropoutbytimleary', // session secret
+    secret: settings.passportSecret, // session secret
     resave: true,
     saveUninitialized: false
 }));
