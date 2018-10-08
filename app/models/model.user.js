@@ -27,7 +27,8 @@ var userSchema = mongoose.Schema({
     //     email        : String,
     //     name         : String
     // }
-    level: Number
+    level: Number,
+    name: String
 
 });
 
