@@ -24,7 +24,7 @@
           <% albums.forEach(function(album) { %>
               <tr class="album-table-row" data-href='/admin/albums/<%= album.id %>' data-id="<%= album.id %>" data-name="<%= album.name %>">
                 <td><%= album.name %></td>
-                <td>X</td>
+                <td><%= imgCounts.find(function(element){return element._id == album.id}).imgCount %></td>
                 <td>Workin Prog</td>
                 <td>
                   <button type="submit" class="btn delete-btn"  data-toggle="modal" data-target="#deleteAlbumModal">

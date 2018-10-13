@@ -4,8 +4,6 @@
 // get all the tools we need
 var express  = require('express');
 var app      = express();
-var httpPort     = process.env.HTTP_PORT || 8080;
-var httpsPort     = process.env.HTTPS_PORT || 8443;
 
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -110,8 +108,8 @@ if(!fs.existsSync(settings.pathThumbnails)){
 
 // http server
 var http = require('http');
-http.createServer(app).listen(httpPort);
-console.log('(HTTP) The magic happens on port ' + httpPort);
+http.createServer(app).listen(settings.httpPort);
+console.log('(HTTP) The magic happens on port ' + settings.httpPort);
 
 // https server
 if(settings.allowHttps){
@@ -120,8 +118,8 @@ if(settings.allowHttps){
         key: fs.readFileSync('./keys/client-key.pem'),
         cert: fs.readFileSync('./keys/client-cert.pem')
     };  
-    https.createServer(options, app).listen(httpsPort);
-    console.log('(HTTPS) The safe magic happens on port ' + httpsPort);
+    https.createServer(options, app).listen(settings.httpsPort);
+    console.log('(HTTPS) The safe magic happens on port ' + settings.httpsPort);
 }
 
 
