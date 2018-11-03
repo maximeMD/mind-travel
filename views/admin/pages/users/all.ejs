@@ -9,7 +9,7 @@
     <% include ../../partials/header.ejs %>
     <div class="container">
       <div class='action-bar'>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#newUserModal">New User</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createModal">New User</button>
       </div>
       <table class="table">
         <thead>
@@ -27,7 +27,7 @@
                 <td><%= user.local.email %></td>
                 <td><%= user.level %></td>
                 <td>
-                  <button type="submit" class="btn delete-btn"  data-toggle="modal" data-target="#deleteAlbumModal">
+                  <button type="button" class="btn delete-btn"  data-toggle="modal" data-target="#deleteModal" data-id="<%= user.id %>" data-name="<%= user.name %>">
                     <span class="fa fa-remove" aria-hidden="true" >
                   </button>
                 </td>
@@ -38,11 +38,11 @@
     </div>
 
 <!-- New User Modal -->
-<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+        <h5 class="modal-title" id="createModalLabel">New User</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -78,11 +78,35 @@
   </div>
 </div>
 
+<!-- Delete Album Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/admin/users/delete" method="post">
+        <div class="modal-body">
+          Do you really want to delete this user : <b><span id="deleteModalUserName"></span></b>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>                        
+            <input id="deleteModalUserId" type='hidden' name='id' value=''/>
+            <button type="submit" class="btn btn-danger" >
+              Delete
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <script type="text/javascript" src="validator.min.js"></script>
   <script>
   $("#btnNewUser").click(function(e) {
     e.preventDefault();
@@ -102,6 +126,13 @@
           alert(result.responseText);
         }
     });
+  });
+
+  // change album informations in the delete modal on click
+  $(".delete-btn").click(function(e){
+    console.log($(this).data('name'));
+    $('#deleteModalUserName').text($(this).data('name'));
+    $('#deleteModalUserId').val($(this).data('id'));
   });
 
   
