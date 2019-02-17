@@ -1,4 +1,4 @@
-# Mind Travel
+# Mind Travel (DEPRECATED, see https://github.com/maximeMD/mind-travel-client and https://github.com/maximeMD/mind-travel-api)
 ## A very simple and trippy portfolio for Node.js
 
 ### Introduction
